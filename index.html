@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101018">
+  <title>For test | Dubbing Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">FT</span><span>For test<small>DUBBING STUDIO</small></span></a>
+  <nav><a href="#home" data-i18n="home">سەرەتا</a><a href="#projects" data-i18n="projects">بەرهەمەکان</a><a href="#about" data-i18n="about">دەربارە</a></nav>
+  <div class="header-actions">
+    <select id="language" aria-label="Language"><option value="ku">کوردی</option><option value="ar">العربية</option><option value="en">English</option></select>
+    <button class="outline" id="authOpen" data-i18n="login">چوونەژوورەوە</button>
+    <button class="primary hidden" id="logoutBtn" data-i18n="logout">چوونەدەرەوە</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="eyebrow" data-i18n="eyebrow">دەنگێکی نوێ بۆ چیرۆکەکان</p>
+    <h1 data-i18n="heroTitle">چیرۆکەکان، بە دەنگی ئێمە.</h1>
+    <p class="hero-copy" data-i18n="heroCopy">بەرهەمەکانی دوبلاژمان ببینە و لەگەڵ جیهانی دەنگ و هونەر ئاشنا ببە.</p>
+    <a class="primary button-link" href="#projects" data-i18n="explore">بینینی بەرهەمەکان</a>
+  </div>
+  <div class="hero-art"><div class="sound-ring">▶</div><span class="art-caption">VOICE · STORY · ART</span></div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-heading"><div><p class="eyebrow" data-i18n="library">کتێبخانە</p><h2 data-i18n="latest">دوایین بەرهەمەکان</h2></div><span class="muted" id="projectCount"></span></div>
+  <div class="toolbar"><input id="search" type="search" placeholder="گەڕان بەدوای بەرهەم..." data-i18n-placeholder="search"><select id="category"><option value="all" data-i18n="all">هەمووی</option><option value="Anime">Anime</option><option value="Movie">Movie</option><option value="Series">Series</option></select></div>
+  <div class="grid" id="projectGrid"></div>
+  <p class="empty hidden" id="emptyState" data-i18n="empty">هیچ بەرهەمێک نەدۆزرایەوە.</p>
+</section>
+
+<section class="section about" id="about"><p class="eyebrow" data-i18n="aboutEyebrow">دەربارەی ستۆدیۆ</p><h2 data-i18n="aboutTitle">دەنگ، هەست و چیرۆک.</h2><p data-i18n="aboutCopy">For test شوێنێکە بۆ پیشاندانی بەرهەمەکانی دوبلاژ و ناساندنی کاری تیمەکە.</p></section>
+</main>
+
+<footer><span>© <span id="year"></span> For test Dubbing Studio</span><span data-i18n="footer">دروستکراوە بە خۆشەویستی بۆ هونەری دەنگ</span></footer>
+
+<div class="modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <div class="modal-card">
+    <button class="close" id="authClose" aria-label="Close">×</button>
+    <p class="eyebrow">FOR TEST</p><h2 id="authTitle" data-i18n="welcome">بەخێربێیت</h2>
+    <div class="tabs"><button class="tab active" id="loginTab" data-i18n="login">چوونەژوورەوە</button><button class="tab" id="signupTab" data-i18n="signup">دروستکردنی ئەکاونت</button></div>
+    <form id="authForm"><label data-i18n="email">ئیمەیڵ</label><input id="email" type="email" required autocomplete="email" placeholder="name@example.com"><label data-i18n="password">وشەی نهێنی</label><input id="password" type="password" required minlength="6" autocomplete="current-password" placeholder="••••••••"><button class="primary full" id="authSubmit" type="submit" data-i18n="login">چوونەژوورەوە</button></form>
+    <p class="notice" id="authNotice" aria-live="polite"></p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
