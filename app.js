@@ -1,6 +1,6 @@
 // 1) Create a free Supabase project, then paste its URL and anon key below.
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_URL = "https://djlzxakgpkymontfzpub.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_fOryY6hzvPhsWxch3YLE7G";
 const supabaseReady = window.supabase && SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("YOUR_") && !SUPABASE_ANON_KEY.includes("YOUR_");
 const db = supabaseReady ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
